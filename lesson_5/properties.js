@@ -50,7 +50,11 @@ copyProperties(hal, sal);  // 2
 console.log(sal);                       // { model: 9000, enabled: true }
 
 function wordCount(string) {
-let obj = {};
+  let obj = {};
 
-  for (let
+  string.split(' ').forEach(word => obj[word] ? obj[word] += 1 : obj[word] = 1);
+
+  return obj;
 }
+
+wordCount('box car cat bag box');  // { box: 2, car: 1, cat: 1, bag: 1 }
